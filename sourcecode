@@ -1,0 +1,17 @@
+
+with open('currency.txt') as f :
+    lines = f.readlines()
+
+currencydict = {}
+for line in lines:
+
+      parsed = line.split("\t")
+      currencydict[parsed[0]]=parsed[1]
+
+amount = int(input("enter the amount : \n"))
+print("Currencies you can convert your amount into are as follows : \n")
+[print(item) for item in currencydict.keys()]
+
+print("enter the currency : \n")
+currency = input()
+print (f"{amount} inr is equal to {amount * float(currencydict[currency])} {currency}" )
